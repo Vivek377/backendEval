@@ -9,4 +9,7 @@ const postSchema = mongoose.Schema({
 
 const PostModel = mongoose.model("post", postSchema)
 
+
+
+
 module.exports = PostModel;
