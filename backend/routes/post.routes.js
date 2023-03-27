@@ -9,11 +9,13 @@ postRoutes.get("/", async (req, res) => {
         const decoded = jwt.verify(token, "secret");
         if (decoded) {
             const userID = decoded.userID;
-            console.log(decoded.userID);
+            console.log(decoded.userID,"USEr");
             const posts = await PostModel.find({ "userID": userID });
             res.status(200).send(posts);
         } else {
             res.status(400).send({ msg: "Please login first" });
+
+
         }
     } catch (e) {
         console.log(e);
